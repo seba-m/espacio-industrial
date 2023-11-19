@@ -1,0 +1,189 @@
+/* Ajusta estos estilos en tu archivo contact.module.scss */
+
+.imagen {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container {
+    width: 100%;
+    /* Cambiado a 100% para que sea responsivo */
+    max-width: 960px;
+    /* Mantiene un límite máximo de 960px */
+    height: 706px;
+    margin: 20px auto; /* 10px arriba y abajo, centrado horizontalmente */
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.nameContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    width: 91.5%;
+    padding: 8px;
+}
+
+.title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #023B6D;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.label {
+    margin-bottom: 20px;
+}
+
+.textfield {
+    width: 90%;
+    height: 100%;
+    padding: 8px;
+    border-Radius: 8px;
+    position: relative;
+    display: flex;
+
+
+    input {
+        overflow-y: auto;
+        width: 100%;
+        padding: 8px;
+        /* Ajusta según tus preferencias */
+        border: 1px solid #ccc;
+        border-radius: 8px;
+    }
+
+    .clearButton {
+        /* Ajusta según tus preferencias */
+        position: absolute;
+        top: 27%;
+        right: 5%;
+        color: #6565657a;
+
+        transform: translate(25%, 0%);
+    }
+
+    .clearButton2 {
+        /* Ajusta según tus preferencias */
+        position: absolute;
+        top: 27%;
+        right: 5%;
+        color: #6565657a;
+
+        transform: translate(350%, -170%);
+    }
+
+
+    .clearButton:hover {
+        cursor: pointer;
+        color: #7c7979;
+    }
+
+    .clearButton:active {
+        color: #454343;
+    }
+
+    .clearButton2:hover {
+        cursor: pointer;
+        color: #7c7979;
+    }
+
+    .clearButton2:active {
+        color: #454343;
+    }
+}
+
+.inputTextarea {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    border-radius: 8px;
+    height: 200px;
+    width: 900px;
+    border: 1px solid #ccc;
+    resize: none;
+    transform: translate(5.5%, 0%);
+}
+
+.camposContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sendButton {
+    width: 50%;
+    height: 100%;
+    padding: 8px;
+    border-Radius: 8px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFA500;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.5;
+    border: none;
+    margin-top: 20px;
+    transform: translate(50%, 100%);
+}
+.sendButton:hover{
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #ff9500;
+}
+.sendButton:active{
+    color: #ffffff;
+    background-color: #ff8000;
+}
+
+
+
+
+@media screen and (max-width: 960px) {
+
+    .nameContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 101.5%;
+    }
+
+    .container {
+        width: 100%;
+        height: 100%;
+    }
+
+    .inputTextarea {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 8px;
+        border-radius: 8px;
+        height: 20vh;
+        width: 92vw;
+        border: 1px solid #ccc;
+        resize: none;
+        transform: translate(5.5%, 0%);
+    }
+
+    .textfield {
+        .clearButton2 {
+            top: 7.5vh;
+            right: 6vh;
+        }
+    }
+    .sendButton {
+        transform: translate(50%, -10%);
+    }
+}
