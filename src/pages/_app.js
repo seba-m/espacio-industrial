@@ -1,15 +1,22 @@
 import '@/styles/globals.css'
 import { CookiesProvider } from "react-cookie"
-import Footer from '@/components/LandingPage/Footer'
-import NavBar from '../components/LandingPage/NavBar'
+
+import Footer from '@/components/Footer'
+import NavBar from '../components/NavBar'
+import { Lato } from '@next/font/google'
+
+const lato = Lato({
+  subsets: ['latin-ext'],
+  fontDisplay: 'swap',
+  weight: ['100', '300', '400', '700', '900'],
+});
 
 
 
 function MyApp({ Component, pageProps }) {
-
   return (
     <CookiesProvider>
-      <main className=''>
+      <main className={`${lato.className}`}>
       {/* nav */}
       <NavBar />
       {/* content */}
