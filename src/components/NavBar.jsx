@@ -4,7 +4,9 @@ import Image from "next/image";
 
 export default function NavBar() {
     return (
-        <Navbar fluid={true} rounded={true} className="bg-[#023b6d] shadow !py-1">
+        <Navbar fluid={true} rounded={true} 
+            theme={{ base: `px-2 py-2.5 dark:border-gray-700 dark:bg-gray-800 sm:px-4 bg-[#023b6d] shadow !py-1 !rounded-none`}}
+        >
             <Navbar.Brand
                 href="https://espacioindustria.cl/"
                 className="flex items-center"
@@ -16,7 +18,7 @@ export default function NavBar() {
                 />
             </Navbar.Brand>
 
-            <Navbar.Toggle theme={{ base:`inline-flex items-center rounded-lg p-2 text-sm text-white hover:bg-[#6684c6] focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 lg:hidden` }}/>
+            <Navbar.Toggle theme={{ base:`inline-flex items-center rounded-0 p-2 text-sm text-white hover:bg-[#6684c6] focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 lg:hidden` }}/>
             <Navbar.Collapse theme={{
                 base: `w-full lg:block lg:w-auto`,
                 list: `mt-4 flex flex-col lg:mt-0 lg:flex-row lg:space-x-8 lg:text-sm lg:font-medium`

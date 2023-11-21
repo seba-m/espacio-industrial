@@ -24,7 +24,7 @@ export default function LandingPage() {
       <div className={`${"h-56 sm:h-64 xl:h-80 2xl:h-96"} ${styles.banner}`}>
         <Carousel slide={false}>
           {images.map((image, index) => (
-            <img key={index} class="h-auto w-full" src={image} alt="..." />
+            <img key={index} className="h-auto w-full" src={image} alt="..." />
           ))}
         </Carousel>
       </div>

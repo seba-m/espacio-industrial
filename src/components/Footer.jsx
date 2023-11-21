@@ -1,9 +1,9 @@
 export default function Footer() {
-    return <footer className="bg-[#023b6d] bg-no-repeat bg-cover rounded-lg shadow bottom-0">
+    return <footer className="bg-[#023b6d] bg-no-repeat bg-cover !rounded-none shadow bottom-0">
         <div className="w-full max-w-screen-xl mx-auto p-3 md:py-8">
             <div className="sm:flex sm:items-center sm:justify-between mb-4">
                 <a href="/" className="flex justify-center items-center mb-4 sm:mb-0">
-                    <img src="/img/logo_blanco.png" className="h-16 m-3" alt="Logo Espacio Industrial" />
+                    <img src="/img/logo_blanco.png" className="h-20 m-3" alt="Logo Espacio Industrial" />
                 </a>
                 <div className="flex flex-col text-center mb-4">
                     <p className="text-white font-bold capitalize text-2xl mb-2">siguenos en</p>
@@ -26,7 +26,7 @@ export default function Footer() {
                     <a className="text-white text-xl" href="tel:+56957288408">+569 5728 8408</a>
                 </div>
             </div>
-            <span className="block text-sm text-white sm:text-center justify-center items-center">© 2023 <a href="/" className="hover:underline">Espacio Industrial Minero™</a>. All Rights Reserved.</span>
+            <span className="block text-sm text-white text-center justify-center items-center">© 2023 <a href="/" className="hover:underline">Espacio Industrial Minero™</a></span>
         </div>
     </footer>
 }
