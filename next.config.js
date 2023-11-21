@@ -23,6 +23,9 @@ module.exports = {
   images: {
     domains: ["res.cloudinary.com", "cdn.jsdelivr.net"]
   },
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'styles')],
+  },
   webpack(config, { dev }) {
     const rules = config.module.rules
       .find((rule) => typeof rule.oneOf === 'object')

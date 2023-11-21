@@ -46,6 +46,10 @@
 }
 
 @media screen and (max-width: 768px) {
+  .search_container {
+    width: 92%;
+  }
+
   .search_button {
     padding: .6rem;
     svg {

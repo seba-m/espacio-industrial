@@ -1,0 +1,185 @@
+.div_global{
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    background-color:#F5F5F5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.div_title{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.div_definition{
+    display: flex;
+    flex-direction: column; /* Cambia a columna por defecto */
+    width: 100%; /* Usa porcentajes para el ancho */
+    max-width: 1000px; /* Establece un ancho máximo */
+    margin: auto; /* Centra el div horizontalmente */
+    height: auto; /* Permitir que la altura se ajuste automáticamente */
+    background-color: #fff;
+    border-radius: 5px;
+  
+    @media screen and (min-width: 768px) {
+      /* Media query para pantallas más grandes */
+      flex-direction: row; /* Cambia a fila para pantallas más grandes */
+    }
+}
+
+.div_definition_text{
+    width: 70%;
+    padding: 12px;
+
+    @media screen and (max-width: 768px) {
+        /* Ajustes para pantallas más pequeñas */
+        font-size: 14px; /* Reducir el tamaño de fuente para pantallas más pequeñas */
+        height: auto; /* Cambiar la altura para que el contenido se ajuste dinámicamente */
+        padding: 8px; /* Ajustar el padding para pantallas más pequeñas si es necesario */
+        width: 100%;
+      }
+}
+
+.div_definition_img{
+    width: 30%;
+    .definition_img {
+        width: 100%; /* Ocupa todo el ancho del contenedor */
+        height: 100%; /* Ocupa todo el alto del contenedor */
+        background-size: cover; /* Ajusta el tamaño de la imagen para cubrir el contenedor */
+        background-position: center; /* Posición de la imagen */
+      }
+    
+      @media screen and (max-width: 768px) {
+        /* Ajustes para pantallas más pequeñas */
+        width: 100%; /* Ocupar el 100% del ancho del contenedor padre */
+        height: 200px; /* Definir una altura fija o un tamaño adecuado para mostrar la imagen */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+}
+
+.div_ejecutado_patrocinado{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 30px;
+    width: 600px;
+    height: 300px;
+    
+    @media screen and (max-width: 768px) {
+        /* Ajustes para pantallas más pequeñas */
+        width: 100%; /* Ocupar el 100% del ancho del contenedor padre */
+        height: 600px; /* Definir una altura fija o un tamaño adecuado para mostrar la imagen */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+      }
+}
+
+.div_cidere_ejecutado{
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    width: 270px;
+    height: 270px;
+    background-color: #fff;
+}
+
+.div_cidere_ejecutado_img{
+        height: 80%;
+        width: 100%;
+    .cidere_ejecutado_img{
+        width: 100%;
+        height: 100%;
+        background-size: contain; /* Ajusta la imagen para que quepa completamente dentro del div */
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+.colaboran_section{
+    display: flex;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    @media screen and (max-width: 768px) {
+        /* Ajustes para pantallas más pequeñas */
+        width: 100%; /* Ocupar el 100% del ancho del contenedor padre */
+        height: auto; /* Definir una altura fija o un tamaño adecuado para mostrar la imagen */
+      }
+}
+
+.div_colaboran_apoyo{
+    width: 70%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+    @media screen and (max-width: 768px) {
+        /* Ajustes para pantallas más pequeñas */
+        width: 100%; /* Ocupar el 100% del ancho del contenedor padre */
+        height: auto; /* Definir una altura fija o un tamaño adecuado para mostrar la imagen */
+        display: flex;
+        margin-top: 50px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+      }
+}
+
+
+.div_title_colaboran_apoyo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.div_colaboradores{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 50px;
+    @media screen and (max-width: 768px) {
+        /* Ajustes para pantallas más pequeñas */
+        width: 100%; /* Ocupar el 100% del ancho del contenedor padre */
+        height: 1000px; /* Definir una altura fija o un tamaño adecuado para mostrar la imagen */
+        display: flex;
+        margin-top: 50px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+      }
+}
+
+.div_colaborador{
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    width: 30%;
+    height: 270px;
+    background-color: #fff;
+    @media screen and (max-width: 768px) {
+        /* Ajustes para pantallas más pequeñas */
+        display: flex;
+        flex-direction: column;
+        padding: 12px;
+        width: 270px;
+        height: 270px;
+        background-color: #fff;
+      }
+}

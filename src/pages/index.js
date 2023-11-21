@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "../styles/index/index.module.scss";
 import { Carousel } from "flowbite-react";
-import Search from "../components/LandingPage/Search";
+import Search from "../components/LandingPage/SearchBar";
 
 export default function LandingPage() {
   const images = [

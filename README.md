@@ -6,7 +6,6 @@ amarillo: #ffa500
 naranjo: #ef8f00
 naranjo claro: #f09814
 
-
 ```bash
 npm run dev
 # o
