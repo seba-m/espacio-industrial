@@ -15,7 +15,7 @@ export default function CustomCheckbox({ options, updateFilters, updateSelectedC
         newCheckedItems[index] = !newCheckedItems[index];
         setCheckedItems(newCheckedItems);
 
-        const selectedOptions = options.filter((option, i) => newCheckedItems[i]);
+        const selectedOptions = options?.filter((option, i) => newCheckedItems[i]);
 
         updateFilters(selectedOptions);
         updateSelectedCount(selectedOptions.length);

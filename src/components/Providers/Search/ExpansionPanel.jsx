@@ -13,8 +13,8 @@ const ExpansionPanel = ({ title, content, updateFilters }) => {
     };
 
     useEffect(() => {
-        const selectedOptions = content.filter(option => option.selected);
-        setSelectedCount(selectedOptions.length);
+        const selectedOptions = content?.filter(option => option.selected);
+        setSelectedCount(selectedOptions?.length);
     }, [content]);
 
     if (!content) {
