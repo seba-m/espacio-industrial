@@ -46,7 +46,7 @@ export default function NavBar() {
                 </Navbar.Link>
                 <Navbar.Link
                     as={Link}
-                    href="/buscar"
+                    href="/buscar#proveedores"
                     className="text-white p-2 flex items-center justify-center transition-opacity hover:opacity-75 text-xl border-0"
                 >
                     Proveedores
