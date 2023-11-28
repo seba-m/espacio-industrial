@@ -5,6 +5,7 @@ import { Formik } from "formik";
 import { Button } from "@material-tailwind/react";
 import { useState } from "react";
 import { Select, Option, Textarea } from "@material-tailwind/react";
+import Link from "next/link";
 
 
 export default function Register() {
@@ -2594,7 +2595,7 @@ export default function Register() {
           )}
         </Formik>
         <div className="mt-8 text-sm text-center">
-            Al hacer clic en "Registrarse" aceptas nuestros <a className="text-[#023B6D]" href="https://www.espacioindustria.cl/docs/T%C3%A9rminos_y_condiciones_Espacio_Industrial_Minero.pdf" target="_blank">Términos y condiciones</a>
+          Al hacer clic en &quot;Registrarse&quot; aceptas nuestros <Link className="text-[#023B6D]" href="https://www.espacioindustria.cl/docs/T%C3%A9rminos_y_condiciones_Espacio_Industrial_Minero.pdf" target="_blank">Términos y condiciones</Link>
         </div>
       </div>
     </div>

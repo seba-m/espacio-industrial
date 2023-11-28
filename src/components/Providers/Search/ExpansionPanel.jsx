@@ -4,10 +4,6 @@ import { ChevronUpIcon } from '@heroicons/react/20/solid';
 import CustomCheckbox from './CustomCheckbox';
 
 const ExpansionPanel = ({ title, content, updateFilters }) => {
-    if (!content) {
-        return null;
-    }
-
     const [isOpen, setIsOpen] = useState(false);
     const [selectedCount, setSelectedCount] = useState(0);
     const contentRef = useRef(null);
@@ -20,6 +16,10 @@ const ExpansionPanel = ({ title, content, updateFilters }) => {
         const selectedOptions = content.filter(option => option.selected);
         setSelectedCount(selectedOptions.length);
     }, [content]);
+
+    if (!content) {
+        return null;
+    }
 
     return (
         <>
