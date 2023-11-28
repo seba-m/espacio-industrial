@@ -26,7 +26,7 @@ export default function NavBar() {
                 <Navbar.Link
                     as={Link}
                     href="/"
-                    className="text-white p-2 flex items-center justify-center transition-opacity hover:opacity-75 text-xl border-0"
+                    className="text-white p-2 flex items-center justify-center transition-opacity hover:opacity-75 hover:text-[#000] text-xl border-0"
                 >
                     Inicio
                 </Navbar.Link>
@@ -36,6 +36,13 @@ export default function NavBar() {
                     className="text-white p-2 flex items-center justify-center transition-opacity hover:opacity-75 text-xl border-0"
                 >
                     Nosotros
+                </Navbar.Link>
+                <Navbar.Link
+                    as={Link}
+                    href="/nosotros/#asociados"
+                    className="text-white p-2 flex items-center justify-center transition-opacity hover:opacity-75 text-xl border-0"
+                >
+                    Socios
                 </Navbar.Link>
                 <Navbar.Link
                     as={Link}
@@ -51,9 +58,17 @@ export default function NavBar() {
                 >
                     Contacto
                 </Navbar.Link>
+                <Navbar.Link
+                    as={Link}
+                    href="/preguntas"
+                    className="text-white p-2 flex items-center justify-center transition-opacity hover:opacity-75 text-xl border-0"
+                >
+                    FaQ
+                </Navbar.Link>
                 <div className="flex flex-row items-center justify-center w-full lg:w-auto ">
                     <Button
-                        href="/login"
+                        as={Link}
+                        href="/auth"
                         type="button"
                         className="
                                 bg-[#023b6d] hover:bg-[#024f93] focus:ring-4 focus:outline-none
@@ -66,7 +81,8 @@ export default function NavBar() {
                         </p>
                     </Button>
                     <Button
-                        href="/register"
+                        as={Link}
+                        href="/auth/registrarse"
                         type="button"
                         className="
                                     text-white bg-white hover:bg-gray-200 focus:ring-4 focus:outline-none

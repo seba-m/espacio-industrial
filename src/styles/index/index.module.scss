@@ -76,8 +76,27 @@
   align-items: center;
 }
 
+.partners_logo_card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 14rem;
+  height: 14rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.partners_logo_card:hover {
+  transform: scale(1.08); /* Aumenta el tamaño al pasar el ratón */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Cambia la sombra */
+}
+
 .partners_logo {
-  width: 100%; // Tamaño por defecto
+  padding: .5rem;
+  border-radius: 1rem;
+  width: 100%; 
   height: 100%;
   object-fit: contain;
 }
@@ -91,25 +110,14 @@
 }
 
 .video_container {
-  width: 60rem;
+  width: 50rem;
 }
 
 .video_canvas {
-  position: relative;
-  overflow: hidden;
   width: 100%;
-  padding-top: 56.25%;
 }
 
-.video_responsive {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-}
+
 
 @media screen and (max-width: 1024px) {
   .information_title {
@@ -129,15 +137,19 @@
   }
 
   .partners_logos {
-    grid-template-columns: repeat(6, 1fr);
-    gap: 1rem;
-    padding: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+
+  .partners_logo_card{
+    width: 12rem;
+    height: 12rem;
   }
 
   .partners_logo {
-    width: 90%; // Tamaño por defecto
-    height: 90%;
-    object-fit: contain;
+    width: 100%; // Tamaño por defecto
+    height: 100%;
+    padding: .5rem;
   }
 
   .video {
@@ -168,11 +180,12 @@
 
   .partners_logos {
     grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
   }
 
   .partners_logo {
-    width: 80%; // Tamaño por defecto
-    height: 80%;
+    width: 100%; // Tamaño por defecto
+    height: 100%;
     object-fit: contain;
   }
 
@@ -194,8 +207,13 @@
     font-size: 1rem;
   }
 
+
+  .partners_logo_card{
+    width: 11rem;
+    height: 11rem;
+  }
+
   .partners_logos {
-    grid-template-columns: repeat(2, 1fr);
     padding: 3rem;
   }
 }
@@ -217,12 +235,21 @@
     max-width: 25rem;
   }
   .partners_logos {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
 }
 
+
 @media screen and (max-width: 480px) {
+
+  .partners_logo_card{
+    width: 10rem;
+    height: 10rem;
+  }
+
   .partners_logos {
-    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+    padding: 1rem;
   }
 }

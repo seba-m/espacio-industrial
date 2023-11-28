@@ -24,7 +24,7 @@ export default function LandingPage() {
       <div className={`${"h-56 sm:h-64 xl:h-80 2xl:h-96"} ${styles.banner}`}>
         <Carousel slide={false}>
           {images.map((image, index) => (
-            <img key={index} className="h-auto w-full" src={image} alt="..." />
+            <img key={index} class="h-auto w-full" src={image} alt="..." />
           ))}
         </Carousel>
       </div>
@@ -52,20 +52,23 @@ export default function LandingPage() {
         </div>
         <div className={styles.partners_logos}>
           {partners.map((image, index) => (
-            <img
+            <div key={index} className={styles.partners_logo_card}>
+              <img
               key={index}
               className={styles.partners_logo}
               src={image}
               alt="..."
             />
+            </div>
           ))}
         </div>
       </div>
       <div className={styles.video}>
         <div className={styles.video_container}>
           <div className={styles.video_canvas}>
-            <iframe
-              className={styles.video_responsive}
+
+            <iframe 
+              class="w-full aspect-video aspect-ratio: 16 / 9" 
               src="https://www.youtube.com/embed/luoceoov2w8?modestbranding=1;&showinfo=0;&rel=0;&autoplay=0;"
               title="YouTube video player"
               frameBorder="0"
