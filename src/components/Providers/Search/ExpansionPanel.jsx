@@ -1,36 +1,35 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Transition } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/20/solid';
 import CustomCheckbox from './CustomCheckbox';
 
-const ExpansionPanel = ({ title, content }) => {
+const ExpansionPanel = ({ title, content, updateFilters }) => {
     if (!content) {
         return null;
     }
 
     const [isOpen, setIsOpen] = useState(false);
+    const [selectedCount, setSelectedCount] = useState(0);
+    const contentRef = useRef(null);
 
     const toggleAccordion = () => {
         setIsOpen(!isOpen);
     };
 
-    const selectedOptions = content.filter((option) => option.selected);
-    const totalOptions = content.length;
-
-    let optionsText;
-    if (selectedOptions.length === 0) {
-        optionsText = 'Todas';
-    } else {
-        optionsText = `${selectedOptions.length} de ${totalOptions} seleccionadas`;
-    }
+    useEffect(() => {
+        const selectedOptions = content.filter(option => option.selected);
+        setSelectedCount(selectedOptions.length);
+    }, [content]);
 
     return (
         <>
             <div
-                className={`flex flex-row p-3 justify-between cursor-pointer items-center select-none`} 
+                className={`flex flex-row p-3 justify-between cursor-pointer items-center select-none`}
                 onClick={toggleAccordion}
             >
-                <h3 className="text-lg font-semibold">{title}: {optionsText}</h3>
+                <h3 className="text-lg font-semibold">
+                    {title}: {selectedCount === 0 ? 'Todas' : `${selectedCount} de ${content.length} seleccionadas`}
+                </h3>
                 <ChevronUpIcon
                     className={`${isOpen ? 'transform rotate-180' : ''} w-5 h-5 transition-transform`}
                 />
@@ -43,15 +42,18 @@ const ExpansionPanel = ({ title, content }) => {
                 leave="transition-opacity duration-300"
                 leaveFrom="opacity-100"
                 leaveTo="opacity-0"
+                ref={contentRef}
             >
-                {(ref) => (
-                    <div
-                        ref={ref}
-                        className={`mt-0 ${isOpen ? 'block' : 'hidden'} transition-all duration-300`}
-                    >
-                        <CustomCheckbox options={content} isOpen={isOpen} />
-                    </div>
-                )}
+                <div
+                    className={`mt-0 ${isOpen ? 'block' : 'hidden'} transition-all duration-300`}
+                    ref={contentRef}
+                >
+                    <CustomCheckbox
+                        options={content}
+                        updateFilters={updateFilters}
+                        updateSelectedCount={setSelectedCount}
+                    />
+                </div>
             </Transition>
         </>
     );
