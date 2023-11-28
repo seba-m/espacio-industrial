@@ -1,4 +1,4 @@
-import styles from "../../../styles/Pages/auth/register/Register.module.scss";
+import styles from "@/styles/Pages/auth/register/Register.module.scss";
 import { Input, Typography } from "@material-tailwind/react";
 import { Switch } from "@material-tailwind/react";
 import { Formik } from "formik";

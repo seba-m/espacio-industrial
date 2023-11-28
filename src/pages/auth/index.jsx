@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from "../../styles/auth/login.module.scss";
+import styles from "@/styles/auth/login.module.scss";
 import { Input, Typography, Checkbox, Button } from "@material-tailwind/react";
 
 export default function Login() {

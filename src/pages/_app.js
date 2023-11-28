@@ -2,7 +2,7 @@ import '@/styles/globals.css'
 import { CookiesProvider } from "react-cookie"
 
 import Footer from '@/components/Footer'
-import NavBar from '../components/NavBar'
+import NavBar from '@/components/NavBar'
 import { Lato } from '@next/font/google'
 
 const lato = Lato({
