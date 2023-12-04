@@ -1,17 +1,22 @@
 import styles from "@/styles/components/Search.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlass, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 import { useState, useEffect } from "react";
 import { useDebounce } from "@/hooks/useDebounce";
 
-export default function SearchBar({ onSearch }) {
-  const [searchText, setSearchText] = useState('');
+export default function SearchBar({ onSearch, search, handleClearFilters }) {
+  const [searchText, setSearchText] = useState(search);
   const debouncedSearchText = useDebounce(searchText, 300);
 
   useEffect(() => {
     onSearch(debouncedSearchText);
-  }, [debouncedSearchText, onSearch]);
+  }, [debouncedSearchText, onSearch, search]);
+
+  const handleClear = () => {
+    setSearchText('');
+    handleClearFilters();
+  }
 
   return (
     <div className={styles.search_container}>
@@ -21,8 +26,11 @@ export default function SearchBar({ onSearch }) {
         placeholder="Busque el proveedor o servicio que necesite..."
         value={searchText}
         onChange={(e) => setSearchText(e.target.value)} />
-      <button className={styles.search_button}>
+      <button onClick={(e) => onSearch(debouncedSearchText)} className={`${styles.search_button} !rounded-r-none`}>
         <FontAwesomeIcon icon={faMagnifyingGlass} />
+      </button>
+      <button onClick={handleClear} className={styles.search_button}>
+        <FontAwesomeIcon icon={faTrash} />
       </button>
     </div>
   );

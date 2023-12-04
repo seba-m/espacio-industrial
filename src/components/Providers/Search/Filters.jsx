@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 
 import { Spinner } from 'flowbite-react';
 
-export default function Filters({ selectedFilters, onFilterChange }) {
+export default function Filters({ selectedFilters, onFilterChange, handleClearFilters }) {
     const [category, setCategory] = useState([]);
     const [subcategory, setSubcategory] = useState([]);
     const [size, setSize] = useState([]);
@@ -113,12 +113,18 @@ export default function Filters({ selectedFilters, onFilterChange }) {
 
     return (
         <Accordion className='flex flex-col justify-between divide-y divide-gray-200 border-gray-200 dark:divide-gray-700 dark:border-gray-700 rounded-lg border w-full md:w-44 lg:w-96 h-fit' >
-            <ExpansionPanel title="Categorías" content={category} updateFilters={selectedOptions => updateSelectedFilters('category', selectedOptions)} />
-            <ExpansionPanel title="Rubros" content={subcategory} updateFilters={selectedOptions => updateSelectedFilters('subcategory', selectedOptions)} />
-            <ExpansionPanel title="Tamaños" content={size} updateFilters={selectedOptions => updateSelectedFilters('size', selectedOptions)} />
             <ExpansionPanel title="Regiones" content={region} updateFilters={selectedOptions => updateSelectedFilters('region', selectedOptions)} />
             <ExpansionPanel title="Provincias" content={provincias} updateFilters={selectedOptions => updateSelectedFilters('provincias', selectedOptions)} />
             <ExpansionPanel title="Comunas" content={comunas} updateFilters={selectedOptions => updateSelectedFilters('comunas', selectedOptions)} />
+            <ExpansionPanel title="Categorías" content={category} updateFilters={selectedOptions => updateSelectedFilters('category', selectedOptions)} />
+            <ExpansionPanel title="Rubros" content={subcategory} updateFilters={selectedOptions => updateSelectedFilters('subcategory', selectedOptions)} />
+            <ExpansionPanel title="Tamaños" content={size} updateFilters={selectedOptions => updateSelectedFilters('size', selectedOptions)} />
+
+            <div className="mb-2 pt-2">
+                <button onClick={handleClearFilters} className="px-4 py-2 bg-blue-500 text-white rounded">
+                    Limpiar Filtros
+                </button>
+            </div>
         </Accordion >
     );
 }

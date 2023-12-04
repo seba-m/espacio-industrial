@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import styles from "@/styles/index/index.module.scss";
 import { Carousel } from "flowbite-react";
 import Search from "@/components/LandingPage/SearchBar";
@@ -24,7 +23,7 @@ export default function LandingPage() {
       <div className={`${"h-56 sm:h-64 xl:h-80 2xl:h-96"} ${styles.banner}`}>
         <Carousel slide={false}>
           {images.map((image, index) => (
-            <img key={index} class="h-auto w-full" src={image} alt="..." />
+            <img key={index} className="h-auto w-full" src={image} alt="..." />
           ))}
         </Carousel>
       </div>
@@ -68,7 +67,7 @@ export default function LandingPage() {
           <div className={styles.video_canvas}>
 
             <iframe 
-              class="w-full aspect-video aspect-ratio: 16 / 9" 
+              className="w-full aspect-video aspect-ratio: 16 / 9" 
               src="https://www.youtube.com/embed/luoceoov2w8?modestbranding=1;&showinfo=0;&rel=0;&autoplay=0;"
               title="YouTube video player"
               frameBorder="0"

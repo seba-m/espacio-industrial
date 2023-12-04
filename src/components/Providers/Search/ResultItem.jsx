@@ -40,9 +40,8 @@ export default function ResultItem({ item }) {
                                             component="span"
                                             variant="body2"
                                             color="text.primary"
-                                            className='capitalize'
                                         >
-                                            {description?.toLowerCase()}
+                                            {description?.toLowerCase().charAt(0).toUpperCase() + description?.slice(1)}
                                         </Typography>
 
                                         <div className={`flex space-x-2 ${services?.length > 1 ? "overflow-x-auto" : ""}`}>

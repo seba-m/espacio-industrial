@@ -71,6 +71,8 @@ export default function Results({ selectedFilters, search }) {
     }
 
     useEffect(() => {
+        setLoading(true);
+
         let link = "?";
 
         if (currentSort) {
@@ -123,8 +125,9 @@ export default function Results({ selectedFilters, search }) {
             .catch(error => {
                 console.error('Error fetching data:', error);
                 
+            }).finally(() => {
+                setLoading(false);
             });
-        setLoading(false);
     }, [page, displayItems, currentSort, selectedFilters, search]);
 
     useEffect(() => {
@@ -132,7 +135,9 @@ export default function Results({ selectedFilters, search }) {
     }, [currentSort])
 
     if (loading)
-        return <Spinner aria-label="loading" />;
+        return <div className='text-center w-full' >
+            <Spinner aria-label="loading" size="xl" className='text-center w-full' />
+        </div>;
 
     return (
         <Card id="proveedores" className='md:ml-5 h-fit w-full mt-5 md:mt-0'>
