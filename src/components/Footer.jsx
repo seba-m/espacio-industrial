@@ -1,20 +1,7 @@
 import { Typography } from "@material-tailwind/react";
 
 export default function Footer() {
-  const LINKS = [
-    {
-      title: "Contacto:",
-      items: ["Overview", "Features", "Solutions", "Tutorials"],
-    },
-    {
-      title: "Company",
-      items: ["About us", "Careers", "Press", "News"],
-    },
-    {
-      title: "Resource",
-      items: ["Blog", "Newsletter", "Events", "Help center"],
-    },
-  ];
+
 
   return (
     <footer className="w-full p-8 bg-[#023b6d]">
