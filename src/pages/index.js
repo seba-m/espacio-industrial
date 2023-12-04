@@ -70,7 +70,8 @@ export default function LandingPage() {
             <iframe 
               class="w-full aspect-video aspect-ratio: 16 / 9" 
               src="https://www.youtube.com/embed/luoceoov2w8?modestbranding=1;&showinfo=0;&rel=0;&autoplay=0;"
-              frameborder="0"
+              title="YouTube video player"
+              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             ></iframe>
           </div>
