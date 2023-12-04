@@ -119,6 +119,34 @@
 
 
 
+@media screen and (max-width: 1400px) {
+  .information_content {
+    max-width: 45rem;
+  }
+
+  .partners_logos {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    padding: 0;
+  }
+
+  .partners_logo_card{
+    width: 12rem;
+    height: 12rem;
+  }
+
+  .partners_logo {
+    width: 100%; // Tamaño por defecto
+    height: 100%;
+    padding: .5rem;
+  }
+
+  .video {
+    padding: 3rem;
+  }
+}
+
+
 @media screen and (max-width: 1024px) {
   .information_title {
     font-size: 1.5rem;
@@ -181,6 +209,7 @@
   .partners_logos {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    padding: 0;
   }
 
   .partners_logo {
@@ -221,6 +250,10 @@
 @media screen and (max-width: 630px) {
   .information_content {
     max-width: 30rem;
+  }
+
+  .partners_logos {
+    padding: 0;
   }
 
   .partners_logo {
