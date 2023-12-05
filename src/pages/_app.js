@@ -4,6 +4,7 @@ import { CookiesProvider } from "react-cookie";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import { Lato } from "@next/font/google";
+import { CustomHead } from "@/components/CustomHead";
 
 const lato = Lato({
   subsets: ["latin-ext"],
