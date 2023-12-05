@@ -10,8 +10,12 @@ export default function SearchBar({ onSearch, search, handleClearFilters }) {
   const debouncedSearchText = useDebounce(searchText, 300);
 
   useEffect(() => {
+    setSearchText(search);
+  }, [search])
+
+  useEffect(() => {
     onSearch(debouncedSearchText);
-  }, [debouncedSearchText, onSearch, search]);
+  }, [debouncedSearchText, onSearch]);
 
   const handleClear = () => {
     setSearchText('');
@@ -21,6 +25,7 @@ export default function SearchBar({ onSearch, search, handleClearFilters }) {
   return (
     <div className={styles.search_container}>
       <input
+        id="search"
         type="text"
         className={styles.search_input}
         placeholder="Busque el proveedor o servicio que necesite..."

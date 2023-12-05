@@ -14,6 +14,7 @@ const lato = Lato({
 function MyApp({ Component, pageProps }) {
   return (
     <CookiesProvider>
+      <CustomHead />
       <main className={`${lato.className} h-full flex flex-col`}>
         <div className="content">
           {/* nav */}

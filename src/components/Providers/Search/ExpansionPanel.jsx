@@ -24,7 +24,7 @@ const ExpansionPanel = ({ title, content, updateFilters }) => {
     return (
         <>
             <div
-                className={`flex flex-row p-3 justify-between cursor-pointer items-center select-none`}
+                className={`flex flex-row p-3 justify-between cursor-pointer items-center select-none accordion ${isOpen ? 'open' : 'closed'}`}
                 onClick={toggleAccordion}
             >
                 <h3 className="text-lg font-semibold">

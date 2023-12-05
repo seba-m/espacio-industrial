@@ -148,7 +148,7 @@ export default function Results({ selectedFilters, search }) {
                         <Typography>Exactamente {totalItems} resultados</Typography>
                         {/* <Typography>Page: {page}</Typography> */}
                         <ButtonGroup variant="text" aria-label="outlined button group">
-                            <Button type="button" className="mx-auto md:w-20" onClick={handleToggleFuera}>
+                            <Button id="boton-fuera-faena" type="button" className="mx-auto md:w-20" onClick={handleToggleFuera}>
                                 {arrowFueraFaena == true && (
                                     <Icon path={mdiArrowDown}
                                         title="Arrow Down"
@@ -167,7 +167,7 @@ export default function Results({ selectedFilters, search }) {
                                     size={1}
                                 />
                             </Button>
-                            <Button type="button" className="mx-auto md:w-20" onClick={handleToggleDentro}>
+                            <Button id="boton-dentro-faena" type="button" className="mx-auto md:w-20" onClick={handleToggleDentro}>
                                 <Icon path={mdiSealVariant}
                                     title="Cinturon dentro de la faena"
                                     size={1}
