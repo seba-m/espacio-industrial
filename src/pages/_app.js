@@ -6,6 +6,8 @@ import NavBar from "@/components/NavBar";
 import { Lato } from "@next/font/google";
 import { CustomHead } from "@/components/CustomHead";
 
+import { SpeedDialog } from "@/components/SpeedDialog";
+
 const lato = Lato({
   subsets: ["latin-ext"],
   fontDisplay: "swap",
@@ -17,6 +19,7 @@ function MyApp({ Component, pageProps }) {
     <CookiesProvider>
       <CustomHead />
       <main className={`${lato.className} h-full flex flex-col`}>
+      <SpeedDialog />
         <div className="content">
           {/* nav */}
           <NavBar />

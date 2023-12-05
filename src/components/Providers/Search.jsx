@@ -6,11 +6,13 @@ import { Spinner } from 'flowbite-react';
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { useHotkeys } from "react-hotkeys-hook";
+import { HelpModal } from "@/components/HelpModal";
 
 export default function Search() {
     const router = useRouter();
     const [loading, setLoading] = useState(true);
     const [search, setSearch] = useState('');
+    const [openModal, setOpenModal] = useState(false);
     const [selectedFilters, setSelectedFilters] = useState({
         category: [],
         subcategory: [],
@@ -25,7 +27,7 @@ export default function Search() {
         SEARCH_CLEAR: 'ctrl+l',
         SEARCH_NEXT: 'ctrl+right',
         SEARCH_PREV: 'ctrl+left',
-        FILTERS_CLOSE: 'esc', //corregir
+        FILTERS_CLOSE: 'esc',
         TOGGLE_FUERA_FAENA: 'ctrl+f',
         TOGGLE_DENTRO_FAENA: 'ctrl+d',
         HELP: 'ctrl+h',
@@ -52,8 +54,10 @@ export default function Search() {
         e.stopPropagation();
         e.stopImmediatePropagation();
         const element = document.querySelector('svg[data-testid="NavigateBeforeIcon"]');
-        const parent = element.parentElement;
-        parent.click();
+        if (element) {
+            const parent = element.parentElement;
+            parent.click();
+        }
     }, { enableOnFormTags: ['input', 'select', 'textarea'] })
 
     useHotkeys(keyMap.SEARCH_NEXT, (e) => {
@@ -61,8 +65,10 @@ export default function Search() {
         e.stopPropagation();
         e.stopImmediatePropagation();
         const element = document.querySelector('svg[data-testid="NavigateNextIcon"]');
-        const parent = element.parentElement;
-        parent.click();
+        if (element) {
+            const parent = element.parentElement;
+            parent.click();
+        }
     }, { enableOnFormTags: ['input', 'select', 'textarea'] })
 
     useHotkeys(keyMap.FILTERS_CLOSE, (e) => {
@@ -93,6 +99,17 @@ export default function Search() {
         e.stopImmediatePropagation();
         const element = document.getElementById('boton-dentro-faena');
         element.click();
+    }, { enableOnFormTags: ['input', 'select', 'textarea'] })
+
+    useHotkeys(keyMap.HELP, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+
+        const modalInstance = document.getElementById('modal-help');
+        if (!modalInstance) {
+            setOpenModal(true);
+        }
     }, { enableOnFormTags: ['input', 'select', 'textarea'] })
 
     const handleClearFilters = () => {
@@ -135,5 +152,6 @@ export default function Search() {
             <Filters selectedFilters={selectedFilters} onFilterChange={handleFilterChange} handleClearFilters={handleClearFilters} />
             <Results selectedFilters={selectedFilters} search={search} />
         </div>
+        <HelpModal open={openModal} setOpen={setOpenModal} />
     </div>;
 };

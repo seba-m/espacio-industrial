@@ -172,7 +172,6 @@ export default function NavBar() {
             <Button
               as={Link}
               href="/auth"
-              fullWidth
               variant="text"
               size="sm"
               className="bg-[#023b6d] hover:bg-[#024f93] focus:ring-4 focus:outline-none
@@ -187,7 +186,6 @@ export default function NavBar() {
             <Button
               as={Link}
               href="/auth/registrarse"
-              fullWidth
               size="sm"
               className="text-white bg-white hover:bg-gray-200 focus:ring-4 focus:outline-none
                 focus:ring-blue-300 rounded-md px-0 py-2 
