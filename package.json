@@ -38,6 +38,7 @@
     "react-dom": "18.2.0",
     "react-hotkeys": "^2.0.0",
     "react-hotkeys-hook": "^4.4.1",
+    "react-twitter-embed": "^4.0.4",
     "sass": "^1.62.0"
   },
   "devDependencies": {
