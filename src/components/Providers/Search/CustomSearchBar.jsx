@@ -26,10 +26,10 @@ export default function SearchBar({ onSearch, search, handleClearFilters }) {
         placeholder="Busque el proveedor o servicio que necesite..."
         value={searchText}
         onChange={(e) => setSearchText(e.target.value)} />
-      <button onClick={(e) => onSearch(debouncedSearchText)} className={`${styles.search_button} !rounded-r-none`}>
+      <button onClick={(e) => onSearch(debouncedSearchText)} className={styles.search_button}>
         <FontAwesomeIcon icon={faMagnifyingGlass} />
       </button>
-      <button onClick={handleClear} className={styles.search_button}>
+      <button onClick={handleClear} className={`${styles.clear_button} ms-2`}>
         <FontAwesomeIcon icon={faTrash} />
       </button>
     </div>

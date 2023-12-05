@@ -1,6 +1,7 @@
 import React from "react";
 import { Accordion, AccordionHeader, AccordionBody } from "@material-tailwind/react";
 
+
 const CUSTOM_ANIMATION = {
   mount: { scale: 1 },
   unmount: { scale: 0.9 },
@@ -14,7 +15,7 @@ export default function FaqAccordion({ faqData }) {
     }, {})
   );
 
-  const [openNestedAccordion, setOpenNestedAccordion] = React.useState(null);
+  const [openNestedAccordion, setOpenNestedAccordion] = React.useState({});
 
   const handleOpenAccordion = (value) => {
     setOpenAccordion((prevOpenAccordion) => ({
@@ -23,19 +24,23 @@ export default function FaqAccordion({ faqData }) {
     }));
   };
 
-  const handleOpenNestedAccordion = (nestedAccordionId) => {
-    setOpenNestedAccordion((prevOpenNestedAccordion) =>
-      prevOpenNestedAccordion === nestedAccordionId ? null : nestedAccordionId
-    );
+  const handleOpenNestedAccordion = (parentId, nestedId) => {
+    setOpenNestedAccordion((prevOpenNestedAccordion) => {
+      const key = `${parentId}-${nestedId}`;
+      return {
+        ...prevOpenNestedAccordion,
+        [key]: !prevOpenNestedAccordion[key],
+      };
+    });
   };
 
   return (
-    <div>
+    <div className="">
       {faqData.map((item) => (
         <Accordion key={item.id} open={openAccordion[item.id]} animate={CUSTOM_ANIMATION}>
           <AccordionHeader
             onClick={() => handleOpenAccordion(item.id)}
-            className="p-4 text-base bg-[#023B6D] text-white hover:bg-[#024f93] hover:text-white sm:text-base md:text-base lg:text-lg xl:text-xl "
+            className="p-4 text-base bg-[#023B6D] text-white hover:bg-[#024f93] rounded-lg border-color: hover:text-white sm:text-base md:text-base lg:text-lg xl:text-xl "
           >
             {item.question}
           </AccordionHeader>
@@ -45,12 +50,12 @@ export default function FaqAccordion({ faqData }) {
                 {item.answer.map((nestedItem) => (
                   <Accordion
                     key={nestedItem.id}
-                    open={openNestedAccordion === nestedItem.id}
+                    open={openNestedAccordion[`${item.id}-${nestedItem.id}`]}
                     animate={CUSTOM_ANIMATION}
                   >
                     <AccordionHeader
-                      onClick={() => handleOpenNestedAccordion(nestedItem.id)}
-                      className="px-8 text-sm sm:px-8 sm:text-sm text-[#023B6D] hover:text-[#023B6D] md:text-base md:font-bold lg:text-lg lg:font-bold xl:text-xl xl:font-bold"
+                      onClick={() => handleOpenNestedAccordion(item.id, nestedItem.id)}
+                      className="px-8 text-sm sm:px-8 sm:text-sm text-black hover:text-[#023B6D] md:text-base md:font-bold lg:text-lg lg:font-bold xl:text-xl xl:font-bold"
                     >
                       {nestedItem.subquestion}
                     </AccordionHeader>
