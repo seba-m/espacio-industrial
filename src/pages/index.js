@@ -22,7 +22,7 @@ export default function LandingPage() {
     <div>
       <Carousel 
         loop={true}
-        className="rounded-xl"
+      
         prevArrow={({ handlePrev }) => (
           <IconButton
             variant="text"

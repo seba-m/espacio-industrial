@@ -73,7 +73,7 @@ export function FeedbackModal({ open, setOpen }) {
                                 <Button variant="text" color="red" onClick={handleOpen} className="mr-1">
                                     <span>Cerrar</span>
                                 </Button>
-                                <Button type="submit" variant="gradient" color="green">
+                                <Button type="submit" className="bg-[#ffa500]">
                                     <span>Enviar Comentarios</span>
                                 </Button>
                             </DialogFooter>

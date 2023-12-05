@@ -12,9 +12,9 @@ export default function Login() {
     const imageUrl = 'https://live.staticflickr.com/8020/7181914856_fd11726565_h.jpg';
 
     return (
-        <div className={styles.container} style={{ backgroundImage: `url(${imageUrl})`, backgroundSize: 'cover' }}>
+        <div className={`${styles.container} p-2 sm:p-4 md:p-16`} style={{ backgroundImage: `url(${imageUrl})`, backgroundSize: 'cover' }}>
             <div className={styles.login}>
-                <h1 className={styles.title}>ACCEDER</h1>
+                <h1 className="text-center text-[#023B6D] text-2xl font-bold mb-8">ACCEDER</h1>
                 <form action="" className={styles.form}>
                     <div className="flex w-full flex-col gap-6">
                         <Input label="Correo Electrónico" size="lg" color="indigo" />
