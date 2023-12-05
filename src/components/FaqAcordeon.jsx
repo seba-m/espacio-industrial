@@ -35,12 +35,12 @@ export default function FaqAccordion({ faqData }) {
   };
 
   return (
-    <div>
+    <div className="">
       {faqData.map((item) => (
         <Accordion key={item.id} open={openAccordion[item.id]} animate={CUSTOM_ANIMATION}>
           <AccordionHeader
             onClick={() => handleOpenAccordion(item.id)}
-            className="p-4 text-base bg-[#023B6D] text-white hover:bg-[#024f93] hover:text-white sm:text-base md:text-base lg:text-lg xl:text-xl "
+            className="p-4 text-base bg-[#023B6D] text-white hover:bg-[#024f93] rounded-lg border-color: hover:text-white sm:text-base md:text-base lg:text-lg xl:text-xl "
           >
             {item.question}
           </AccordionHeader>
@@ -55,7 +55,7 @@ export default function FaqAccordion({ faqData }) {
                   >
                     <AccordionHeader
                       onClick={() => handleOpenNestedAccordion(item.id, nestedItem.id)}
-                      className="px-8 text-sm sm:px-8 sm:text-sm text-[#023B6D] hover:text-[#023B6D] md:text-base md:font-bold lg:text-lg lg:font-bold xl:text-xl xl:font-bold"
+                      className="px-8 text-sm sm:px-8 sm:text-sm text-black hover:text-[#023B6D] md:text-base md:font-bold lg:text-lg lg:font-bold xl:text-xl xl:font-bold"
                     >
                       {nestedItem.subquestion}
                     </AccordionHeader>

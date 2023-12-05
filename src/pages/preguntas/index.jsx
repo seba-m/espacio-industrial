@@ -103,7 +103,7 @@ export default function AccordionCustomAnimation() {
  
   return (
     <div className="container mx-auto p-8">
-      <h2 className="text-2xl font-bold text-[#023B6D] mb-8 mt-4 sm:text-2xl md:text-3xl lg:text-4xl ">Preguntas Frecuentes</h2>
+      <h2 className="text-2xl font-bold text-[#023B6D]  mb-8 mt-4 sm:text-2xl md:text-3xl lg:text-4xl ">Preguntas Frecuentes</h2>
       <FaqAccordion faqData={faq}/>
     </div>
   );

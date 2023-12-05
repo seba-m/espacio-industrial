@@ -18,6 +18,10 @@
   }
 }*/
 
+html,body {
+  height: 100%;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -26,6 +30,14 @@ body {
     rgb(var(--background-end-rgb))
   ) no-repeat;
   
+}
+
+#__next {
+  height: 100%;
+}
+
+.content {
+  flex: 1 0 auto;
 }
 
 /*input:focus {

@@ -18,7 +18,7 @@ export default function Login() {
                 <form action="" className={styles.form}>
                     <div className="flex w-full flex-col gap-6">
                         <Input label="Correo Electrónico" size="lg" color="indigo" />
-                        <Input type="password" size="lg" label="Contraseña" color="indigo" />
+                        <Input className="focus:shadow-none" type="password" size="lg" label="Contraseña" color="indigo" />
                         <div className="flex items-center">
                             <Checkbox
                                 checked={recordarme}

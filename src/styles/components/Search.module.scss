@@ -35,6 +35,22 @@
   }
 }
 
+.clear_button {
+  background-color: transparent; 
+  border: none;
+  padding: 1rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+  cursor: pointer;
+  color: #023b6d;
+  display: flex;
+  align-items: center;
+
+  svg {
+    width: 40px; 
+    height: 40px;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .search_button {
     padding: .8rem;
