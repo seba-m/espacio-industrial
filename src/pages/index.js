@@ -1,5 +1,7 @@
 import styles from "@/styles/index/index.module.scss";
-import { Carousel } from "flowbite-react";
+//import { Carousel } from "flowbite-react";
+import { Carousel } from "@material-tailwind/react";
+
 import Search from "@/components/LandingPage/SearchBar";
 
 export default function LandingPage() {
@@ -21,11 +23,16 @@ export default function LandingPage() {
   return (
     <div>
       <div className={`${"h-56 sm:h-64 xl:h-80 2xl:h-96"} ${styles.banner}`}>
-        <Carousel slide={false}>
+      <Carousel className="rounded-xl h-full">
+      {images.map((image, index) => (
+            <img key={index} className="h-full w-full object-cover" src={image} alt="..." />
+          ))}
+      </Carousel>
+        {/*<Carousel slide={false}>
           {images.map((image, index) => (
             <img key={index} className="h-auto w-full" src={image} alt="..." />
           ))}
-        </Carousel>
+          </Carousel>*/}
       </div>
       <div className={styles.information}>
         <div className={styles.information_content}>
