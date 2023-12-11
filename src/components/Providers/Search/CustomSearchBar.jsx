@@ -36,8 +36,14 @@ export default function SearchBar({ onSearch, search, handleClearFilters }) {
 
     router.events.on('routeChangeComplete', handleRouteChange);
 
+    //create a timeout to wait for the page to load
+
+
     return () => {
       router.events.off('routeChangeComplete', handleRouteChange);
+      setTimeout(() => {
+        handleRouteChange();
+      }, 100);
     }
   }, [router.events]);
 
