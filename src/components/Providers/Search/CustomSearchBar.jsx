@@ -2,12 +2,15 @@ import styles from "@/styles/components/Search.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faTrash } from "@fortawesome/free-solid-svg-icons";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { useRouter } from 'next/router';
 import { useDebounce } from "@/hooks/useDebounce";
 
 export default function SearchBar({ onSearch, search, handleClearFilters }) {
   const [searchText, setSearchText] = useState(search);
   const debouncedSearchText = useDebounce(searchText, 300);
+  const router = useRouter();
+  const inputRef = useRef();
 
   useEffect(() => {
     setSearchText(search);
@@ -22,10 +25,31 @@ export default function SearchBar({ onSearch, search, handleClearFilters }) {
     handleClearFilters();
   }
 
+  useEffect(() => {
+    const handleRouteChange = () => {
+      const current = inputRef?.current;
+      
+      if (!current) return;
+      
+      inputRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    router.events.on('routeChangeComplete', handleRouteChange);
+
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    }
+  }, [router.events]);
+
+  useEffect(() => {
+    inputRef.current.scrollIntoView({ behavior: 'smooth' });
+  }, []);
+
   return (
     <div className={styles.search_container}>
       <input
         id="search"
+        ref={inputRef} 
         type="text"
         className={styles.search_input}
         placeholder="Busque el proveedor o servicio que necesite..."
