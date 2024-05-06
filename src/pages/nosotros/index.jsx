@@ -6,7 +6,7 @@ const image = [
   "https://www.espacioindustria.cl/img/crdp_logo.614e125b.png",
   "https://www.espacioindustria.cl/img/cmp_logo.4ff1786d.jpg",
   "https://www.espacioindustria.cl/img/pelambres_logo.261f578e.png",
-  "https://www.espacioindustria.cl/img/teck_logo.22f8a0f4.png",
+  "https://www.espacioindustria.cl/img/teck_logo2.81fc2c93.jpg",
 ];
 
 export default function About() {
