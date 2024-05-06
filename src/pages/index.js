@@ -4,9 +4,9 @@ import Search from "@/components/LandingPage/SearchBar";
 
 export default function LandingPage() {
   const images = [
-    "https://api.espacioindustria.cl/api/image_gallery/content?filePath=image_gallery/banner20230911155502.jpg",
-    "https://api.espacioindustria.cl/api/image_gallery/content?filePath=image_gallery/banner20230911155601.jpg",
-    "https://api.espacioindustria.cl/api/image_gallery/content?filePath=image_gallery/banner20230911155629.jpg",
+    "https://api.espacioindustria.cl/api/image_gallery/content?filePath=image_gallery/banner20240229045144.png",
+    "https://api.espacioindustria.cl/api/image_gallery/content?filePath=image_gallery/banner20240229045152.png",
+    "https://api.espacioindustria.cl/api/image_gallery/content?filePath=image_gallery/banner20240229045158.png",
   ];
 
   const partners = [
